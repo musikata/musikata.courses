@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>whole notes and rests</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<script src="bower_components/requirejs/require.js"></script>
+<script src="require.common.js"></script>
+<script>
+
+// require.js error reporting
+window.requirejs.onError = function (err) {
+    "use strict";
+    console.warn('require error: ', err.requireType);
+    if (err.requireType === 'timeout') {
+        console.warn('modules: ' + err.requireModules);
+    }
+    throw err;
+};
+
+require.config({baseUrl: '.'});
+require(['app']);
+
+</script>
+</body>
+</html>
