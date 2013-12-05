@@ -5,7 +5,7 @@ define(
 ],
 function($, DeckFactory){
 
-  var slideDefinitions = {
+  var deckDefinition = {
     title: "Whole Notes and Rests",
     slides: [
 
@@ -78,9 +78,11 @@ function($, DeckFactory){
   $('body').append($deckEl);
 
   var deckFactory = new DeckFactory();
-  var deckView = deckFactory.createDeck(slideDefinitions, {
+  var deckView = deckFactory.createDeck(deckDefinition, {
     el: "#deck"
   });
   deckView.render();
+  deckView.enableNextButton();
+  deckView.enablePreviousButton();
 
 });
