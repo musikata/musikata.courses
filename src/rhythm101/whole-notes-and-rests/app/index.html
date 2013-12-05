@@ -13,6 +13,8 @@
 <script src="require.common.js"></script>
 <script>
 
+require.config({baseUrl: '.'});
+
 // require.js error reporting
 window.requirejs.onError = function (err) {
     "use strict";
@@ -23,7 +25,6 @@ window.requirejs.onError = function (err) {
     throw err;
 };
 
-require.config({baseUrl: '.'});
 require(['app']);
 
 </script>

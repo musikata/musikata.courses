@@ -1,21 +1,25 @@
 require.config({
   paths: {
-    lib: 'bower_components/',
-    text: 'lib/requirejs-text/text',
-    jquery: 'lib/jquery/jquery',
-    backbone: 'lib/backbone/backbone',
-    marionette: 'lib/marionette/lib/backbone.marionette',
-    handlebars: 'lib/handlebars/handlebars',
+    text: 'bower_components/requirejs-text/text',
+    jquery: 'bower_components/jquery/jquery',
+    underscore: 'bower_components/underscore/underscore',
+    backbone: 'bower_components/backbone/backbone',
+    marionette: 'bower_components/marionette/lib/backbone.marionette',
+    handlebars: 'bower_components/handlebars/handlebars',
   },
 
   packages: [
     {name: 'app', location: 'scripts'},
-    {name: 'deck', location: 'lib/musikata.deck'}
+    {name: 'deck', location: 'bower_components/musikata.deck/src'}
   ],
 
   shim: {
+    'underscore': {
+      exports: '_'
+    },
+
     'backbone': {
-      deps: ['lodash', 'jquery'],
+      deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     },
 
